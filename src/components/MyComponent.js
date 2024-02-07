@@ -1,5 +1,5 @@
 import React from "react";
-import UserInfor from "./UserInfor";
+import AddUserInfor from "./AddUserInfor";
 import DisplayInfor from "./DisplayInfor";
 class MyComponent extends React.Component {
   state = {
@@ -9,11 +9,18 @@ class MyComponent extends React.Component {
       { id: 3, name: "Kiet Gody 3", age: "36" },
     ],
   };
+
+  handleAddNewUser = (userOjb) => {
+    console.log(userOjb);
+    this.setState({
+      listUsers: [userOjb, ...this.state.listUsers],
+    });
+  };
   //JSX
   render() {
     return (
       <div>
-        <UserInfor />
+        <AddUserInfor handleAddNewUser={this.handleAddNewUser} />
         <br />
         <br />
         <DisplayInfor listUsers={this.state.listUsers} />
