@@ -8,9 +8,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 1350px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1400px !important;
+  }
+}
+
 .app-container {
   .header-container {
-    .navbar-nav {
+    .btn-login {
+      border-radius: 5px;
+      margin-right: 15px;
+      padding: 0 15px;
+      border: 1px solid rgb(60, 60, 60);
+      height: 40px;
+    }
+    .btn-signup {
+      border-radius: 5px;
+      padding: 0 15px;
+      background: #303030;
+      color: white;
+      height: 40px;
+      &:hover {
+        background: #464646;
+      }
+    }
+    .navbar {
+      padding-top: 20px;
+      z-index: 20;
+      background-color: rgba(0, 0, 0, 0) !important;
       .nav-link {
         &.active {
           color: rgb(57, 208, 246);
@@ -18,4 +48,35 @@ body {
       }
     }
   }
+  .homepage-container {
+    .homepage-content {
+      position: relative;
+      padding: 100px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .title-intro {
+        font-size: 80px;
+        font-weight: 400;
+      }
+      .title-body {
+        font-size: 18px;
+      }
+      .btn-start {
+        border-radius: 5px;
+        padding: 10px 15px;
+        background: #303030;
+        color: white;
+        &:hover {
+          background: #464646;
+        }
+      }
+    }
+  }
+}
+video {
+  position: fixed;
+  bottom: -10%;
+  width: 100vw;
 }
